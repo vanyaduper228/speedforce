@@ -1,0 +1,13 @@
+{
+  "itemGroup.speedforce": "Example Mod Tab",
+  "block.speedforce.example_block": "Example Block",
+  "item.speedforce.example_item": "Example Item",
+
+  "speedforce.configuration.title": "Speed Force Configs",
+  "speedforce.configuration.section.speedforce.common.toml": "Speed Force Configs",
+  "speedforce.configuration.section.speedforce.common.toml.title": "Speed Force Configs",
+  "speedforce.configuration.items": "Item List",
+  "speedforce.configuration.logDirtBlock": "Log Dirt Block",
+  "speedforce.configuration.magicNumberIntroduction": "Magic Number Text",
+  "speedforce.configuration.magicNumber": "Magic Number"
+}
