@@ -1,0 +1,173 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 2026-07-12 02:48:52
+Description: Rendering screen
+
+java.lang.IllegalStateException: Can only blur once per frame
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.render.state.GuiRenderState.blurBeforeThisStratum(GuiRenderState.java:40) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.GuiGraphics.blurBeforeThisStratum(GuiGraphics.java:141) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.screens.Screen.renderBlurredBackground(Screen.java:401) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.screens.Screen.renderBackground(Screen.java:391) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/speedforce@1.0.0/com.speedforce.client.SpeedForceScreen.render(SpeedForceScreen.java:59) ~[main/:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.screens.Screen.renderWithTooltipAndSubtitles(Screen.java:112) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/neoforge@21.11.42/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:427) ~[neoforge-21.11.42.jar:?] {}
+	at TRANSFORMER/neoforge@21.11.42/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:422) ~[neoforge-21.11.42.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:554) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.runTick(Minecraft.java:1345) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.run(Minecraft.java:924) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.main.Main.main(Main.java:229) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at net.neoforged.fml.startup.Client.main(Client.java:19) [loader-10.0.36.jar:10.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.render.state.GuiRenderState.blurBeforeThisStratum(GuiRenderState.java:40) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.GuiGraphics.blurBeforeThisStratum(GuiGraphics.java:141) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.screens.Screen.renderBlurredBackground(Screen.java:401) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.screens.Screen.renderBackground(Screen.java:391) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/speedforce@1.0.0/com.speedforce.client.SpeedForceScreen.render(SpeedForceScreen.java:59) ~[main/:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.gui.screens.Screen.renderWithTooltipAndSubtitles(Screen.java:112) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/neoforge@21.11.42/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:427) ~[neoforge-21.11.42.jar:?] {}
+	at TRANSFORMER/neoforge@21.11.42/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:422) ~[neoforge-21.11.42.jar:?] {}
+-- Screen render details --
+Details:
+	Screen name: com.speedforce.client.SpeedForceScreen
+	Mouse location: Scaled: (213.500000, 120.000000). Absolute: (427.000000, 240.000000)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:554) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.runTick(Minecraft.java:1345) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.run(Minecraft.java:924) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.main.Main.main(Main.java:229) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at net.neoforged.fml.startup.Client.main(Client.java:19) [loader-10.0.36.jar:10.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+-- Uptime --
+Details:
+	JVM uptime: 49.573s
+	Wall uptime: 30.807s
+	High-res time: 47.920s
+	Client ticks: 412 ticks / 20.600s
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.fillReport(Minecraft.java:2421) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.emergencySaveAndCrash(Minecraft.java:988) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.run(Minecraft.java:944) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.main.Main.main(Main.java:229) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at net.neoforged.fml.startup.Client.main(Client.java:19) [loader-10.0.36.jar:10.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; LocalPlayer{name=Dev, id=97, pos=(7.807164141858026, 88.0, -24.79696839367694), mode=CREATIVE, permission=permission level: OWNERS}
+	Chunk stats: 169, 81
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,82,0), Section: (at 0,2,0 in 0,5,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 3876 game time, 3876 day time
+	Server brand: neoforge
+	Server type: Integrated singleplayer server
+	Tracked entity count: 54
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources, mod/speedforce, mod/neoforge
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.11
+	Minecraft Version ID: 1.21.11
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.11, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 349700096 bytes (333 MiB) / 760217600 bytes (725 MiB) up to 2136997888 bytes (2038 MiB)
+	CPUs: 6
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD FX(tm)-6300 Six-Core Processor             
+	Identifier: AuthenticAMD Family 21 Model 2 Stepping 0
+	Microarchitecture: Piledriver
+	Frequency (GHz): 3.49
+	Number of physical packages: 1
+	Number of physical CPUs: 3
+	Number of logical CPUs: 6
+	Graphics card #0 name: AMD Radeon RX 580 2048SP
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 31.0.21924.61
+	Memory slot #0 capacity (MiB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 1.33
+	Memory slot #0 type: DDR3
+	Memory slot #1 capacity (MiB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 1.33
+	Memory slot #1 type: DDR3
+	Virtual memory max (MiB): 19924.75
+	Virtual memory used (MiB): 15001.52
+	Swap memory total (MiB): 11776.00
+	Swap memory used (MiB): 0.00
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 40866.03, total: 238358.00
+	Space in storage for workdir (MiB): available: 192530.81, total: 289920.00
+	JVM Flags: 0 total; 
+	Debug Flags: 0 total; 
+	Launched Version: 21.11.42
+	Backend library: LWJGL version 3.3.3+5
+	Backend API: AMD Radeon RX 580 2048SP GL version 3.3.0 Core Profile Context 26.1.1.251211, ATI Technologies Inc.
+	Window size: 854x480
+	GFLW Platform: win32
+	Render Extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Universe: 400921fb54442d18
+	Type: Integrated Server (map_client.txt)
+	Transparency: regular
+	Render Distance: 3/3 chunks
+	Resource Packs: vanilla, mod_resources, mod/speedforce, mod/neoforge (incompatible)
+	Current Language: ru_ru
+	Locale: ru_RU
+	System encoding: Cp1251
+	File encoding: UTF-8
+	CPU: 6x AMD FX(tm)-6300 Six-Core Processor 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/97, l='ServerLevel[New World]', x=7.81, y=88.00, z=-24.80]]
+	Active Data Packs: vanilla, mod_data, mod/speedforce, mod/neoforge
+	Available Data Packs: minecart_improvements, redstone_experiments, trade_rebalance, vanilla, mod/neoforge, mod/speedforce, mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: 5347428260764432067
+	Suppressed Exceptions: ~~NONE~~
+	Class Processors: 
+		00,00%: neoforge:neoforge_dev_dist_cleaner
+		00,00%: neoforge:computing_frames (marker)
+		00,00%: neoforge:runtime_enum_extender
+		04,44%: neoforge:access_transformer
+		00,05%: neoforge:mixin
+		00,00%: neoforge:simple_processors_default (marker)
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.biome.biome
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.block.flowerpotblock
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.levelgen.structure.structure
+		00,29%: neoforge.coremods:method_redirector
+	Mod List: 
+		neoforge-21.11.42-client-extra-aka-minecraft-resou|Minecraft                     |minecraft                     |1.21.11             |Manifest: NOSIGNATURE
+		neoforge-21.11.42.jar                             |NeoForge                      |neoforge                      |21.11.42            |Manifest: NOSIGNATURE
+		main                                              |Speed Force                   |speedforce                    |1.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: eaea2436-014f-4e0e-85c6-e938bf656c83
+	FML: 10.0.36
+	NeoForge: 21.11.42

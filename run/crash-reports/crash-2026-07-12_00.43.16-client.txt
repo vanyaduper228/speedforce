@@ -1,0 +1,230 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 2026-07-12 00:43:16
+Description: Initializing game
+
+java.lang.NullPointerException: Initializing game
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.PreparableReloadListener$SharedState.get(PreparableReloadListener.java:44) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.resources.model.ModelManager.reload(ModelManager.java:110) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance$StateFactory.lambda$static$0(SimpleReloadInstance.java:145) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.prepareTasks(SimpleReloadInstance.java:86) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.startTasks(SimpleReloadInstance.java:50) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.of(SimpleReloadInstance.java:33) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.create(SimpleReloadInstance.java:140) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.ReloadableResourceManager.createReload(ReloadableResourceManager.java:50) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.<init>(Minecraft.java:684) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.main.Main.main(Main.java:214) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at net.neoforged.fml.startup.Client.main(Client.java:19) [loader-10.0.36.jar:10.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.PreparableReloadListener$SharedState.get(PreparableReloadListener.java:44) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.resources.model.ModelManager.reload(ModelManager.java:110) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance$StateFactory.lambda$static$0(SimpleReloadInstance.java:145) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.prepareTasks(SimpleReloadInstance.java:86) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.startTasks(SimpleReloadInstance.java:50) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.of(SimpleReloadInstance.java:33) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.SimpleReloadInstance.create(SimpleReloadInstance.java:140) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.server.packs.resources.ReloadableResourceManager.createReload(ReloadableResourceManager.java:50) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.Minecraft.<init>(Minecraft.java:684) ~[neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+-- Initialization --
+Details:
+	Modules: 
+		ADVAPI32.dll:Расширенная библиотека API Windows 32:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		BCrypt.dll:Библиотека криптографических примитивов Windows:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		COMCTL32.dll:Библиотека элементов управления взаимодействия с пользователем:6.10 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPT32.dll:API32 криптографии:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTBASE.DLL:Base cryptographic API DLL:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTSP.dll:Cryptographic Service Provider API:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		CoreMessaging.dll:Microsoft CoreMessaging Dll:10.0.22000.1042 (WinBuild.160101.0800):Microsoft Corporation
+		CoreUIComponents.dll:Microsoft Core UI Components Dll:10.0.22000.132:Microsoft Corporation
+		DBGHELP.DLL:Windows Image Helper:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		DEVOBJ.dll:Device Information Set DLL:10.0.22000.2124 (WinBuild.160101.0800):Microsoft Corporation
+		DNSAPI.dll:Динамическая библиотека API DNS-клиента:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		GDI32.dll:GDI Client DLL:10.0.22000.2360 (WinBuild.160101.0800):Microsoft Corporation
+		GLU32.dll:Библиотека подпрограмм OpenGL:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		IMM32.DLL:Multi-User Windows IMM32 API Client DLL:10.0.22000.1641 (WinBuild.160101.0800):Microsoft Corporation
+		IPHLPAPI.DLL:API вспомогательного приложения IP:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		KERNEL32.DLL:Библиотека клиента Windows NT BASE API:10.0.22000.2538 (WinBuild.160101.0800):Microsoft Corporation
+		KERNELBASE.dll:Библиотека клиента Windows NT BASE API:10.0.22000.2538 (WinBuild.160101.0800):Microsoft Corporation
+		MMDevApi.dll:MMDevice API:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		MSASN1.dll:ASN.1 Runtime APIs:10.0.22000.1219 (WinBuild.160101.0800):Microsoft Corporation
+		MSCTF.dll:Серверная библиотека MSCTF:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		NSI.dll:NSI User-mode interface DLL:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		OLEAUT32.dll:OLEAUT32.DLL:10.0.22000.2176 (WinBuild.160101.0800):Microsoft Corporation
+		Ole32.dll:Microsoft OLE для Windows:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		OpenAL.dll:Main implementation library:1.23.1:
+		POWRPROF.dll:DLL модуля поддержки профиля управления питанием:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		PSAPI.DLL:Process Status Helper:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		Pdh.dll:Модуль поддержки данных производительности Windows:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		RPCRT4.dll:Библиотека удаленного вызова процедур:10.0.22000.1761 (WinBuild.160101.0800):Microsoft Corporation
+		SETUPAPI.dll:Windows Setup API:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		SHCORE.dll:SHCORE:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		SHELL32.dll:Общая библиотека оболочки Windows:10.0.22000.708 (WinBuild.160101.0800):Microsoft Corporation
+		UMPDC.dll:User Mode Power Dependency Coordinator:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		USER32.dll:Многопользовательская библиотека клиента USER API Windows:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		USERENV.dll:Userenv:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		VCRUNTIME140.dll:Microsoft® C Runtime Library:14.40.33810.0:Microsoft Corporation
+		VERSION.dll:Version Checking and File Installation Libraries:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		WINHTTP.dll:Службы HTTP Windows:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		WINMM.dll:MCI API DLL:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		WINTRUST.dll:Microsoft Trust Verification APIs:10.0.22000.2482 (WinBuild.160101.0800):Microsoft Corporation
+		WS2_32.dll:32-разрядная библиотека Windows Socket 2.0:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		amdihk64.dll:Radeon Settings: Host Service:2,00,00,1788:Advanced Micro Devices, Inc.
+		amsi.dll:Anti-Malware Scan Interface:10.0.22000.1042 (WinBuild.160101.0800):Microsoft Corporation
+		apphelp.dll:Клиентская библиотека совместимости приложений:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		atig6pxx.dll:atiglpxx.dll:8.14.01.6564:Advanced Micro Devices, Inc. 
+		atio6axx.dll:AMD OpenGL Driver:25.12.230729_569461f:Advanced Micro Devices, Inc
+		awt.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		bcryptPrimitives.dll:Windows Cryptographic Primitives Library:10.0.22000.1455 (WinBuild.160101.0800):Microsoft Corporation
+		cfgmgr32.dll:Configuration Manager DLL:10.0.22000.2124 (WinBuild.160101.0800):Microsoft Corporation
+		clbcatq.dll:COM+ Configuration Catalog:2001.12.10941.16384 (WinBuild.160101.0800):Microsoft Corporation
+		combase.dll:Microsoft COM для Windows:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		dbgcore.DLL:Windows Core Debugging Helpers:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		dinput8.dll:Microsoft DirectInput:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		dwmapi.dll:Интерфейс API диспетчера окон рабочего стола (Майкрософт):10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		dxcore.dll:DXCore:10.0.22000.653 (WinBuild.160101.0800):Microsoft Corporation
+		fastprox.dll:WMI Custom Marshaller:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		fwpuclnt.dll:API пользовательского режима FWP/IPsec:10.0.22000.2538 (WinBuild.160101.0800):Microsoft Corporation
+		gdi32full.dll:GDI Client DLL:10.0.22000.2360 (WinBuild.160101.0800):Microsoft Corporation
+		glfw.dll:GLFW 3.4.0 DLL:3.4.0:GLFW
+		icm32.dll:Microsoft Color Management Module (CMM):10.0.22000.708 (WinBuild.160101.0800):Microsoft Corporation
+		inputhost.dll:InputHost:10.0.22000.168 (WinBuild.160101.0800):Microsoft Corporation
+		java.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		java.exe:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		jemalloc.dll
+		jimage.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		jli.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		jna11020521268432932840.dll:JNA native library:7.0.2:Java(TM) Native Access (JNA)
+		jsvml.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		jvm.dll:OpenJDK 64-Bit server VM:21.0.11.0:Eclipse Adoptium
+		kernel.appcore.dll:AppModel API Host:10.0.22000.71 (WinBuild.160101.0800):Microsoft Corporation
+		lwjgl.dll
+		lwjgl_opengl.dll
+		lwjgl_stb.dll
+		management.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		management_ext.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		mdnsNSP.dll:Bonjour Namespace Provider:3,1,0,1:Apple Inc.
+		mscms.dll:DLL-библиотека системы сопоставления цветов Майкрософт:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		msvcp140.dll:Microsoft® C Runtime Library:14.40.33810.0:Microsoft Corporation
+		msvcp_win.dll:Microsoft® C Runtime Library:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		msvcrt.dll:Windows NT CRT DLL:7.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		mswsock.dll:Расширение поставщика службы API Microsoft Windows Sockets 2.0:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		napinsp.dll:Поставщик оболочки совместимости для имен электронной почты:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		net.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		nio.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		nlansp_c.dll:NLA Namespace Service Provider DLL:10.0.22000.653 (WinBuild.160101.0800):Microsoft Corporation
+		ntdll.dll:Системная библиотека NT:10.0.22000.1761 (WinBuild.160101.0800):Microsoft Corporation
+		opengl32.dll:OpenGL Client DLL:10.0.22000.1042 (WinBuild.160101.0800):Microsoft Corporation
+		pnrpnsp.dll:Поставщик пространства имен PNRP:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		profapi.dll:User Profile Basic API:10.0.22000.2124 (WinBuild.160101.0800):Microsoft Corporation
+		rasadhlp.dll:Remote Access AutoDial Helper:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		rsaenh.dll:Microsoft Enhanced Cryptographic Provider:10.0.22000.2652 (WinBuild.160101.0800):Microsoft Corporation
+		sapi.dll:Speech API:5.3.28804.00 (WinBuild.160101.0800):Microsoft Corporation
+		sechost.dll:Host for SCM/SDDL/LSA Lookup APIs:10.0.22000.2652 (WinBuild.160101.0800):Microsoft Corporation
+		shlwapi.dll:Библиотека небольших программ оболочки:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		textinputframework.dll:"TextInputFramework.DYNLINK":10.0.22000.2360 (WinBuild.160101.0800):Microsoft Corporation
+		ucrtbase.dll:Microsoft® C Runtime Library:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		uxtheme.dll:Библиотека тем UxTheme (Microsoft):10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		vcruntime140_1.dll:Microsoft® C Runtime Library:14.40.33810.0:Microsoft Corporation
+		verify.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+		wbemcomn.dll:WMI:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		wbemprox.dll:WMI:10.0.22000.2245 (WinBuild.160101.0800):Microsoft Corporation
+		wbemsvc.dll:WMI:10.0.22000.2245 (WinBuild.160101.0800):Microsoft Corporation
+		win32u.dll:Win32u:10.0.22000.2538 (WinBuild.160101.0800):Microsoft Corporation
+		windows.storage.dll:API хранения Microsoft WinRT:10.0.22000.184 (WinBuild.160101.0800):Microsoft Corporation
+		winrnr.dll:LDAP RnR Provider DLL:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		wintypes.dll:Библиотека DLL основных типов Windows:10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		wshbth.dll:Windows Sockets Helper DLL:10.0.22000.653 (WinBuild.160101.0800):Microsoft Corporation
+		xinput1_4.dll:API общего контроллера (Майкрософт):10.0.22000.1 (WinBuild.160101.0800):Microsoft Corporation
+		zip.dll:OpenJDK Platform binary:21.0.11.0:Eclipse Adoptium
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.client.main.Main.main(Main.java:214) [neoforge-21.11.42-client-extra-aka-minecraft-resources.jar:?] {}
+	at net.neoforged.fml.startup.Client.main(Client.java:19) [loader-10.0.36.jar:10.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.11
+	Minecraft Version ID: 1.21.11
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.11, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 31196800 bytes (29 MiB) / 371195904 bytes (354 MiB) up to 2136997888 bytes (2038 MiB)
+	CPUs: 6
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD FX(tm)-6300 Six-Core Processor             
+	Identifier: AuthenticAMD Family 21 Model 2 Stepping 0
+	Microarchitecture: Piledriver
+	Frequency (GHz): 3.49
+	Number of physical packages: 1
+	Number of physical CPUs: 3
+	Number of logical CPUs: 6
+	Graphics card #0 name: AMD Radeon RX 580 2048SP
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 31.0.21924.61
+	Memory slot #0 capacity (MiB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 1.33
+	Memory slot #0 type: DDR3
+	Memory slot #1 capacity (MiB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 1.33
+	Memory slot #1 type: DDR3
+	Virtual memory max (MiB): 19924.75
+	Virtual memory used (MiB): 14376.11
+	Swap memory total (MiB): 11776.00
+	Swap memory used (MiB): 0.00
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 40854.85, total: 238358.00
+	Space in storage for workdir (MiB): available: 192555.34, total: 289920.00
+	JVM Flags: 0 total; 
+	Debug Flags: 0 total; 
+	Launched Version: 21.11.42
+	Backend library: LWJGL version 3.3.3+5
+	Backend API: AMD Radeon RX 580 2048SP GL version 3.3.0 Core Profile Context 26.1.1.251211, ATI Technologies Inc.
+	Window size: <not initialized>
+	GFLW Platform: win32
+	Render Extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'neoforge'
+	Universe: 404
+	Type: Client (map_client.txt)
+	Locale: ru_RU
+	System encoding: Cp1251
+	File encoding: UTF-8
+	CPU: 6x AMD FX(tm)-6300 Six-Core Processor 
+	Class Processors: 
+		00,00%: neoforge:neoforge_dev_dist_cleaner
+		00,00%: neoforge:computing_frames (marker)
+		00,00%: neoforge:runtime_enum_extender
+		05,39%: neoforge:access_transformer
+		00,06%: neoforge:mixin
+		00,00%: neoforge:simple_processors_default (marker)
+		00,02%: neoforge.coremods:field_to_getter.net.minecraft.world.level.biome.biome
+		00,02%: neoforge.coremods:field_to_getter.net.minecraft.world.level.block.flowerpotblock
+		00,02%: neoforge.coremods:field_to_getter.net.minecraft.world.level.levelgen.structure.structure
+		00,30%: neoforge.coremods:method_redirector
+	Mod List: 
+		neoforge-21.11.42-client-extra-aka-minecraft-resou|Minecraft                     |minecraft                     |1.21.11             |Manifest: NOSIGNATURE
+		neoforge-21.11.42.jar                             |NeoForge                      |neoforge                      |21.11.42            |Manifest: NOSIGNATURE
+		main                                              |Speed Force                   |speedforce                    |1.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: bda9210c-545a-4e91-9bab-a24b26219f71
+	FML: 10.0.36
+	NeoForge: 21.11.42
