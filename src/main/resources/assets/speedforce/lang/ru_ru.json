@@ -1,0 +1,14 @@
+{
+  "speedforce.gui.title": "⚡ Сила Скорости",
+
+  "speedforce.energy": "Энергия",
+  "speedforce.level": "Уровень",
+  "speedforce.points": "Очки навыков",
+  "speedforce.distance": "Пройдено",
+
+  "speedforce.speed": "Скорость",
+  "speedforce.control": "Контроль",
+
+  "speedforce.upgrade": "Улучшить",
+  "speedforce.not_enough": "Недостаточно очков"
+}
